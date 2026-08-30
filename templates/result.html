@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quizziz - Result</title>
+</head>
+<body>
+    <h1>Hasil Quiz</h1>
+    <div class="score">{{score}} / {{total}}</div>
+
+    <div class="msg">
+        {% if score == total %}
+            <p>Selamat! Anda menjawab semua pertanyaan dengan benar!</p>
+        {% elif score >= total / 2 %}
+            <p>Bagus! Anda menjawab lebih dari setengah pertanyaan dengan benar.</p>
+        {% else %}
+            <p>Jangan menyerah! Coba lagi untuk meningkatkan skor Anda.</p>
+        {% endif %}
+    </div>
+
+<a href="/">Pilih Quiz Lain</a>
+<body>
+</html>

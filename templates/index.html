@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Pilih Quiz</h1>
+    {% for q in quizzes %}
+    <div class = "card">
+        <h3>{{q[1]}}</h3>
+        <p>{{q[2]}}</p>
+        <form action = "/start" method="POST">
+            <input type = "hidden" name = "quiz_id" value = "{{q[0]}}">
+            <button type = "submit" value = "Mulai Quiz">Mulai Quiz</button>
+        </form>
+    </div>
+    {% endfor %}
+</body>
+</html>
