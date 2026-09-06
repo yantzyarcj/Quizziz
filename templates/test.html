@@ -4,16 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quizziz</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <div class = "info">Soal {{idx +1}} dari {{total}} | Skor: {{score}}</div>
-    <div class = "q">{{q.q}}</div>
+    <div class="card">
+        <div class = "info">Soal {{idx +1}} dari {{total}} | Skor: {{score}}</div>
+        <div class = "q">{{q.q}}</div>
 
-    <form method = "POST">
-        {% for p in pilihan %}
-        <label><input type="radio" name="answer" value="{{p}}"> {{p}}</label><br>
-        {% endfor %}
-        <button type="submit">Jawab</button>
-    </form>
+        <form method = "POST">
+            {% for p in pilihan %}
+            <label><input type="radio" name="answer" value="{{p}}" required> {{p}}</label><br>
+            {% endfor %}
+            <button type="submit">Jawab</button>
+        </form>
+    </div>
 </body>
 </html>
