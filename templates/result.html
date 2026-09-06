@@ -4,21 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Quizziz - Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
-    <h1>Hasil Quiz</h1>
-    <div class="score">{{score}} / {{total}}</div>
+    <div class="card">
+        <h1>Hasil Quiz</h1>
+        <div class="score">{{score}} / {{total}}</div>
 
-    <div class="msg">
-        {% if score == total %}
-            <p>Selamat! Anda menjawab semua pertanyaan dengan benar!</p>
-        {% elif score >= total / 2 %}
-            <p>Bagus! Anda menjawab lebih dari setengah pertanyaan dengan benar.</p>
-        {% else %}
-            <p>Jangan menyerah! Coba lagi untuk meningkatkan skor Anda.</p>
-        {% endif %}
+        <div class="msg">
+            {% if score == total %}
+                <p>Selamat! Anda menjawab semua pertanyaan dengan benar!</p>
+            {% elif score >= total / 2 %}
+                <p>Bagus! Anda menjawab lebih dari setengah pertanyaan dengan benar.</p>
+            {% else %}
+                <p>Jangan menyerah! Coba lagi untuk meningkatkan skor Anda.</p>
+            {% endif %}
+        </div>
+
+        <a href="/">Pilih Quiz Lain</a>
     </div>
-
-<a href="/">Pilih Quiz Lain</a>
-<body>
+</body>
 </html>
